@@ -2242,17 +2242,17 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
         <div class="form-box">
           <p class="form-ttl">Veja como a IAra funciona para a sua farmácia</p>
           <p class="form-sub">Em menos de 30 minutos, você entende o que ela pode fazer pelo seu delivery.</p>
-          <div class="field"><label>Nome da farmácia</label><input type="text" placeholder="Ex: Farmácia São João"></div>
-          <div class="field"><label>WhatsApp</label><input type="tel" placeholder="(00) 00000-0000"></div>
+          <div class="field"><label>Nome da farmácia</label><input id="campo-farmacia" type="text" placeholder="Ex: Farmácia São João"></div>
+          <div class="field"><label>WhatsApp</label><input id="campo-whatsapp" type="tel" placeholder="(00) 00000-0000"></div>
           <div class="field">
             <label>Quantas entregas sua farmácia faz por dia?</label>
-            <select>
+            <select id="campo-entregas">
               <option value="" disabled selected>Selecione uma opção</option>
               <option value="30-50">Entre 30 e 50 entregas</option>
               <option value="50+">Acima de 50 entregas</option>
             </select>
           </div>
-          <button class="form-btn">
+          <button id="btn-submit" class="form-btn">
             Quero agendar minha demonstração gratuita
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           </button>
@@ -2323,6 +2323,29 @@ document.querySelectorAll('section:not(.hero)').forEach((section) => {
   } else if (bg) {
     bg.classList.add('static');
   }
+});
+
+document.getElementById('btn-submit').addEventListener('click', async () => {
+  const farmacia = document.getElementById('campo-farmacia').value.trim();
+  const whatsapp = document.getElementById('campo-whatsapp').value.trim();
+  const entregas = document.getElementById('campo-entregas').value;
+
+  if (!farmacia || !whatsapp || !entregas) {
+    alert('Por favor, preencha todos os campos antes de continuar.');
+    return;
+  }
+
+  try {
+    await fetch('https://automacaobluelinedigital-n8n.cloudfy.live/webhook/iara-farma-leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ farmacia, whatsapp, entregas })
+    });
+  } catch (_) {
+    // erro de rede não bloqueia o redirect
+  }
+
+  window.location.href = 'obrigado.html';
 });
 
 const phone = document.querySelector('.iphone-col');
