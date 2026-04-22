@@ -2359,7 +2359,7 @@ document.getElementById('btn-submit').addEventListener('click', async () => {
     await fetch('https://automacaobluelinedigital-n8n.cloudfy.live/webhook/iara-farma-leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome_do_lead: nome, farmacia, telefone_do_lead: whatsapp, entregas })
+      body: JSON.stringify({ nome, farmacia, whatsapp, entregas })
     });
   } catch (_) {}
 
