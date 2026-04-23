@@ -1692,6 +1692,22 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
     object-fit:contain;
     object-position:bottom center;
   }
+  .sol-glow{
+    width:240px;
+    height:60px;
+    bottom:0;
+    background:radial-gradient(ellipse, rgba(74,222,128,.45) 0%, rgba(74,222,128,.12) 50%, transparent 75%);
+    filter:blur(10px);
+  }
+  .sol-avatar::after{
+    content:'';
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:72px;
+    background:linear-gradient(to top, rgba(252,254,253,1) 0%, rgba(252,254,253,.6) 40%, transparent 100%);
+    pointer-events:none;
+    z-index:3;
+  }
 }
 </style>
 </head>
