@@ -792,13 +792,14 @@ nav{display:none}
   filter:blur(12px);
 }
 .hero-avatar{
-  width:min(100%,346px);
+  width:min(100%,320px);
   position:relative;
   z-index:2;
   object-fit:contain;
+  border-radius:24px;
   filter:
-    drop-shadow(0 26px 42px rgba(0,0,0,.24))
-    drop-shadow(0 0 22px rgba(74,222,128,.10));
+    drop-shadow(0 26px 42px rgba(0,0,0,.38))
+    drop-shadow(0 0 32px rgba(74,222,128,.18));
 }
 @keyframes heroAvatarFloat{
   0%,100%{transform:translateY(0)}
@@ -1178,12 +1179,12 @@ h2.light{color:#fff}
   overflow:hidden;
   display:flex;
   align-items:center;
-  justify-content:flex-end;
-  min-height:620px;
+  justify-content:center;
+  min-height:420px;
   position:relative;
   box-shadow:none;
   isolation:isolate;
-  padding-right:8px
+  padding:0
 }
 .sol-glow{
   position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
@@ -1199,12 +1200,15 @@ h2.light{color:#fff}
   pointer-events:none
 }
 .sol-avatar img{
-  width:min(138%,920px);
+  width:min(100%,360px);
   position:relative;
   z-index:2;
   object-fit:contain;
-  transform:translateX(34px) translateY(8px);
-  filter:drop-shadow(0 22px 34px rgba(10,46,24,.12))
+  border-radius:24px;
+  transform:translateX(0) translateY(0);
+  filter:
+    drop-shadow(0 22px 40px rgba(0,0,0,.32))
+    drop-shadow(0 0 28px rgba(74,222,128,.16))
 }
 .sol-hl{background:var(--gd);border-radius:14px;padding:20px 24px;margin-top:22px}
 .sol-hl p{color:#fff;font-size:15px;font-weight:500;line-height:1.65}
@@ -1586,7 +1590,7 @@ h2.light{color:#fff}
 .form-gar{text-align:center;margin-top:14px;font-size:12px;color:rgba(255,255,255,.35);line-height:1.65}
 
 footer{background:#040C07;padding:26px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(74,222,128,.07)}
-footer img{height:24px;display:block;opacity:.9}
+footer img{height:40px;display:block;object-fit:contain}
 footer p{font-size:12px;color:rgba(255,255,255,.28)}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
@@ -1685,7 +1689,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
   .sol-avatar{
     min-height:auto;
     justify-content:center;
-    padding-right:0;
+    padding:0;
   }
   .sol-avatar img{
     width:min(100%,560px);
@@ -1837,7 +1841,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
         </div>
 
         <div class="hero-avatar-wrap">
-          <img class="hero-avatar" src="assets/avatar-side.png" alt="Avatar da IAra Farma">
+          <img class="hero-avatar" src="Gemini_Generated_Image_5gb78t5gb78t5gb7.png" alt="Avatar da IAra Farma">
         </div>
 
         <div class="hero-float-card hf1">
@@ -2000,7 +2004,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
       <div class="reveal">
         <div class="sol-avatar">
           <div class="sol-glow"></div>
-          <img src="assets/avatar-side.png" alt="Avatar da IAra Farma">
+          <img src="Gemini_Generated_Image_5gb78t5gb78t5gb7.png" alt="Avatar da IAra Farma">
         </div>
       </div>
       <div class="reveal">
@@ -2270,7 +2274,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.28)}
 </section>
 
 <footer>
-  <img src="assets/logo-white.png" alt="IAra Farma">
+  <img src="LOGOTIPO - IAra (4).png" alt="IAra Farma">
   <p>© 2025 IAra Farma. Todos os direitos reservados.</p>
 </footer>
 
